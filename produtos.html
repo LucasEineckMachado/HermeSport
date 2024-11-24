@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos | HermeSport</title>
+    <link rel="stylesheet" href="produtos.css" />
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- modelos de produtos na lista e no carrinho -->
+    <div class="models">
+
+       <!-- produtos na lista -->
+       <div class="produto-item">
+        <a href="">
+            <div class="produto-item--img"><img src="" /></div>
+            <div class="produto-item--add">+</div>
+        </a>
+        <div class="produto-item--price">R$ --</div>
+        <div class="produto-item--name">--</div>
+        <div class="produto-item--desc">--</div>
+    </div>
+
+        <!-- produtos no carrinho -->
+        <div class="cart--item">
+            <img src="" />
+            <div class="cart--item-nome">--</div>
+            <div class="cart--item--qtarea">
+                <button class="cart--item-qtmenos">-</button>
+                <div class="cart--item--qt">1</div>
+                <button class="cart--item-qtmais">+</button>
+            </div>
+        </div>
+
+    </div>
+    <!-- /models -->
+
+    <!-- .menu -->
+    <header> 
+        <div class="logo">
+            <img src="img/logo1.png" alt="Logo">
+        </div>
+        <div class="menu-openner">
+            <span>0</span>🛒
+        </div>
+    </header>
+    
+    <nav>
+        <div class="nav-menu-container">
+            <img class="logo2" src="img/logo2.png" alt="Logo Secundária"> <!-- Logo alinhada à esquerda -->
+            <ul id="navMenu">
+                <li class="nav-item"><a href="Unidades.html">Unidades</a></li>
+                <li class="nav-item"><a href="index.php">Home</a></li>
+                <li class="nav-item"><a href="login.php">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- /menu-openner -->
+
+    <!-- conteudo principal -->
+    <main>
+        <div class="space">.</div>
+        <h2>Produtos</h2>
+
+        <!-- barra de pesquisa -->
+         <div class="input-wrapper">
+            <label for="filter" class="sr-only">Filtro</label>
+            <input type="text" id="filter" placeholder="Filtro">
+            <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#EA3323"><path d="M796-121 533-384q-30 26-69.96 40.5Q423.08-329 378-329q-108.16 0-183.08-75Q120-479 120-585t75-181q75-75 181.5-75t181 75Q632-691 632-584.85 632-542 618-502q-14 40-42 75l264 262-44 44ZM377-389q81.25 0 138.13-57.5Q572-504 572-585t-56.87-138.5Q458.25-781 377-781q-82.08 0-139.54 57.5Q180-666 180-585t57.46 138.5Q294.92-389 377-389Z"/></svg>
+         </div>
+
+        <div class="produto-area"></div>
+    </main>
+    <!-- /conteudo principal -->
+
+    <!-- aside do carrinho -->
+    <aside>
+        <div class="cart--area">
+            <div class="menu-closer">❌</div>
+            <h1>Seus Produtos</h1>
+            <div class="cart"></div>
+            <div class="cart--details">
+                <div class="cart--totalitem subtotal">
+                    <span>Subtotal</span>
+                    <span>R$ --</span>
+                </div>
+                <div class="cart--totalitem desconto">
+                    <span>Desconto</span>
+                    <span>R$ --</span>
+                </div>
+                <div class="cart--totalitem total big">
+                    <span>Total</span>
+                    <span>R$ --</span>
+                </div>
+                <div class="cart--finalizar">Finalizar a compra</div>
+            </div>
+        </div>
+    </aside>
+    <!-- /aside do carrinho -->
+
+    <!-- janela modal .produtoWindowArea -->
+    <div class="produtoWindowArea">
+        <div class="produtoWindowBody">
+            <div class="produtoInfo--cancelMobileButton">Voltar</div>
+            <div class="produtoBig">
+                <img src="" />
+            </div>
+            <div class="produtoInfo">
+                <h1>--</h1>
+                <div class="produtoInfo--desc">--</div>
+                <div class="produtoInfo--sizearea">
+                    <div class="produtoInfo--sector">Tamanho</div>
+                    <div class="produtoInfo--sizes">
+                        <div data-key="P" class="produtoInfo--size">P <span>--</span></div>
+                        <div data-key="M" class="produtoInfo--size">M <span>--</span></div>
+                        <div data-key="G" class="produtoInfo--size selected">G <span>--</span></div>
+                    </div>
+                </div>
+                <div class="produtoInfo--pricearea">
+                    <div class="produtoInfo--sector">Preço</div>
+                    <div class="produtoInfo--price">
+                        <div class="produtoInfo--actualPrice">R$ --</div>
+                        <div class="produtoInfo--qtarea">
+                            <button class="produtoInfo--qtmenos">-</button>
+                            <div class="produtoInfo--qt">1</div>
+                            <button class="produtoInfo--qtmais">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="produtoInfo--addButton">Adicionar ao carrinho</div>
+                <div class="produtoInfo--cancelButton">Cancelar</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Produtos.js"></script>
+    <script src="script.js"></script>
+    <script src="busca.js"></script>
+</body>
+</html>

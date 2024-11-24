@@ -1,0 +1,212 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo principal */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o corpo ocupe toda a altura da viewport */
+    font-family: 'Bebas Neue', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Estilo do Cabeçalho */
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 100px;
+    background-color: #000000;
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza horizontalmente */
+}
+
+.logo img {
+    width: 100px; /* Tamanho da logo */
+}
+/* Estilo da Navegação */
+nav {
+    font-family: 'Bebas Neue', sans-serif; /* Adicione fontes fallback */
+    position: fixed;
+    left: 0;
+    top: 100px;
+    right: 0;
+    background-color: #ff6600; /* Fundo laranja */
+    color: #fff;
+    padding: 5px 15px; /* Reduzido para ocupar menos espaço */
+    display: flex;
+    align-items: center;
+    height: 60px; /* Altura definida para manter uma proporção menor */
+}
+
+.space{
+    height: 100px;
+}
+
+/* Logo secundário no lado esquerdo do menu */
+.logo2 {
+    position: absolute; /* Posição absoluta para fixar no canto */
+    left: 550px; /* Ajusta para o canto esquerdo */
+    top: 50%; /* Centraliza verticalmente */
+    transform: translateY(-50%); /* Ajusta para o centro vertical */
+    max-width: 60px; /* Reduz tamanho do logo secundário */
+    height: auto;
+}
+
+/* Itens de navegação */
+.nav-item {
+    display: flex;
+    align-items: center; /* Alinha verticalmente os itens */
+}
+
+/* Contêiner do Menu de Navegação */
+.nav-menu-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o menu */
+    flex: 1;
+}
+
+/* Menu de Navegação */
+#navMenu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding-left: 0;
+    gap: 15px; /* Espaçamento aumentado entre os itens */
+}
+
+#navMenu li {
+    margin: 0;
+}
+
+#navMenu a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px; /* Aumenta o tamanho da fonte */
+    padding: 8px 12px; /* Adiciona um pouco de espaço ao redor do texto */
+    transition: transform 0.3s ease, color 0.3s ease; /* Adiciona transição para animação */
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+#navMenu a:hover {
+    transform: scale(1.1); /* Aumenta ligeiramente o tamanho ao passar o mouse */
+    color: #f0e68c; /* Altera a cor ao passar o mouse */
+}
+
+
+
+/* Main deve crescer para ocupar o espaço disponível */
+main {
+    flex: 1; /* Faz o main crescer para ocupar o espaço restante */
+    padding-top: 60px; /* Ajuste maior espaçamento acima das caixas */
+    padding-left: 20px; /* Mantém os lados */
+    padding-right: 20px;
+    padding-bottom: 20px; /* Espaço inferior inalterado */
+    text-align: center;
+}
+
+
+
+.unidades-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 150px; /* Aumente para mais espaçamento */
+}
+
+
+
+.unidade-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.unidade-item h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #ff6600;
+}
+
+.unidade-item p {
+    margin-bottom: 15px;
+}
+
+.unidade-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-detalhes {
+    display: inline-block;
+    padding: 10px 15px;
+    color: #fff;
+    background: #35424a;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.btn-detalhes:hover {
+    background: #488;
+}
+
+/* Estilo do Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+/* Rodapé */
+footer {
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto; /* Empurra o rodapé para o fundo da página */
+}

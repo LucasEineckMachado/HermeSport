@@ -1,0 +1,309 @@
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo principal */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o corpo ocupe toda a altura da viewport */
+    font-family: 'Bebas Neue', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Estilo do Cabeçalho */
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 100px;
+    background-color: #000000;
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza horizontalmente */
+}
+
+.logo img {
+    width: 100px; /* Tamanho da logo */
+}
+
+/* Estilo da Navegação */
+nav {
+    font-family: 'Bebas Neue', sans-serif; /* Adicione fontes fallback */
+    position: fixed;
+    left: 0;
+    top: 100px;
+    right: 0;
+    background-color: #ff6600; /* Fundo laranja */
+    color: #fff;
+    padding: 5px 15px; /* Reduzido para ocupar menos espaço */
+    display: flex;
+    align-items: center;
+    height: 60px; /* Altura definida para manter uma proporção menor */
+}
+
+/* Logo secundário no lado esquerdo do menu */
+.logo2 {
+    position: absolute; /* Posição absoluta para fixar no canto */
+    left: 550px; /* Ajusta para o canto esquerdo */
+    top: 50%; /* Centraliza verticalmente */
+    transform: translateY(-50%); /* Ajusta para o centro vertical */
+    max-width: 60px; /* Reduz tamanho do logo secundário */
+    height: auto;
+}
+
+/* Contêiner do Menu de Navegação */
+.nav-menu-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o menu */
+    flex: 1;
+}
+
+/* Menu de Navegação */
+#navMenu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding-left: 0;
+    gap: 15px; /* Espaçamento aumentado entre os itens */
+}
+
+
+#navMenu li {
+    margin: 0;
+}
+
+#navMenu a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px; /* Aumenta o tamanho da fonte */
+    padding: 8px 12px; /* Adiciona um pouco de espaço ao redor do texto */
+    transition: transform 0.3s ease, color 0.3s ease; /* Adiciona transição para animação */
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+#navMenu a:hover {
+    transform: scale(1.1); /* Aumenta ligeiramente o tamanho ao passar o mouse */
+    color: #f0e68c; /* Altera a cor ao passar o mouse */
+}
+
+
+
+/* Botões para abrir e fechar o menu (visível em dispositivos móveis) */
+.open, .close {
+    display: none;
+}
+
+/* Ajustes para a navegação em dispositivos móveis */
+@media (max-width: 992px) {
+    nav {
+        padding: 5px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-menu-container {
+        display: none; /* Oculta o contêiner do menu em dispositivos móveis */
+    }
+
+    #navMenu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background-color: #ff6600; /* Fundo laranja */
+        width: 100%;
+        z-index: 1000;
+    }
+
+    #navMenu.active {
+        display: flex;
+    }
+
+    #navMenu li {
+        margin: 10px 0;
+    }
+
+    .open, .close {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+}
+
+/* Corpo do site */
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex: 1; /* Faz o wrapper crescer para ocupar o espaço restante */
+    padding: 20px;
+    gap: 20px; /* Espaço entre o main e o aside */
+    overflow: auto; /* Garante que não ocorra overflow */
+}
+
+
+/* Main deve crescer para ocupar o espaço disponível */
+main {
+    flex: 1; /* Faz o main crescer para ocupar o espaço restante */
+    padding-top: 60px; /* Ajuste maior espaçamento acima das caixas */
+    padding-left: 20px; /* Mantém os lados */
+    padding-right: 20px;
+    padding-bottom: 20px; /* Espaço inferior inalterado */
+    text-align: center;
+}
+
+
+/* Ajuste do container de slides */
+.slides-container {
+    position: sticky;
+    top: 200px; /* Mesma distância que o aside */
+    width: 100%;
+    height: 60vh; /* Ajuste a altura de acordo com a necessidade */
+    overflow: hidden;
+    z-index: 10; /* Certifique-se de que está acima de outros elementos */
+}
+
+/* Ajuste para os slides */
+.slides {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Ajuste da imagem para que ela cubra a área do slide sem distorcer */
+.slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta a imagem para cobrir toda a área do slide sem distorcer */
+}
+
+
+/* Botões de navegação para os slides */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%; /* Centraliza verticalmente */
+    width: auto;
+    padding: 16px;
+    margin-top: -22px; /* Ajusta para centralização vertical */
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease; /* Suaviza a transição */
+    user-select: none; /* Evita seleção do texto */
+    z-index: 10; /* Garante que fique acima do conteúdo */
+}
+
+/* Estilização para o botão "Prev" */
+.prev {
+    left: 0; /* Alinha à esquerda */
+    border-radius: 3px 0 0 3px; /* Bordas arredondadas no lado direito */
+}
+
+/* Estilização para o botão "Next" */
+.next {
+    right: 0; /* Alinha à direita */
+    border-radius: 0 3px 3px 0; /* Bordas arredondadas no lado esquerdo */
+}
+
+/* Efeito ao passar o mouse */
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro */
+}
+
+/* Pontos dos slides */
+.dots-container {
+    text-align: center;
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.dot:hover, .dot.active {
+    background-color: #717171;
+}
+
+/* Seção da caixa Sobre nos */
+aside {
+    flex: 1; /* Garante que ocupe menos espaço que o main */
+    padding: 10px;
+    position: sticky;
+    top: 200px; /* Espaço abaixo da navegação */
+    box-shadow: 0px 0px 0px 0px rgba(255, 103, 15, 0.699); /* Opcional: adiciona uma sombra ao redor do mapa */
+    height: 60vh; /* Ajusta a altura do mapa para coincidir com a altura dos banners */
+    max-width: 30%; /* Ajuste a largura máxima conforme necessário */
+    text-align: center; /* Centraliza o conteúdo dentro do aside */
+    background-color: #2c2a27;
+    border-radius: 20px;
+}
+
+aside h2 {
+    margin-top: 0;
+    font-family: "Protest Guerrilla", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(255, 81, 0);
+}
+
+aside p{
+    text-align: justify;
+    font-size: larger;
+    color: #fff;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+}
+
+/* Rodapé */
+
+footer {
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 13px;
+    margin-top: auto; /* Empurra o rodapé para o fundo da página */
+}
+
+/* Links do rodapé */
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

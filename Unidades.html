@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="unidades.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+    <title>Unidades - HermeSport</title>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header> 
+        <div class="logo">
+            <img src="img/logo1.png" alt="Logo">
+        </div>
+    </header>
+
+
+     <!-- Navegação -->
+     <nav>
+        <div class="nav-menu-container">
+            <img class="logo2" src="img/logo2.png" alt="Logo Secundária"> <!-- Logo alinhada à esquerda -->
+            <ul id="navMenu">
+                <li class="nav-item"><a href="Unidades.html">Unidades</a></li>
+                <li class="nav-item"><a href="Produtos.html">Produtos</a></li>
+                <li class="nav-item"><a href="logout.php">Sair</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    
+
+
+            <!-- Corpo do site -->
+        <main class="unidades-container">
+            <h1>Nossas Unidades</h1>
+            <section class="unidades-list">
+                <article class="unidade-item" data-unidade="central">
+                    <h2>Unidade Central</h2>
+                    <p>Localizada no centro da cidade, esta unidade oferece uma ampla gama de produtos e serviços para todos os esportistas.</p>
+                    <button class="btn-detalhes" data-id="central">Ver Detalhes</button>
+                </article>
+
+                <article class="unidade-item" data-unidade="leste">
+                    <h2>Unidade Leste</h2>
+                    <p>Especializada em esportes aquáticos e de aventura, esta unidade é perfeita para quem ama desafios.</p>
+                    <button class="btn-detalhes" data-id="leste">Ver Detalhes</button>
+                </article>
+
+                <article class="unidade-item" data-unidade="sul">
+                    <h2>Unidade Sul</h2>
+                    <p>Com um foco em esportes de equipe, esta unidade é o lugar ideal para encontrar equipamentos de futebol, basquete e muito mais.</p>
+                    <button class="btn-detalhes" data-id="sul">Ver Detalhes</button>
+                </article>
+            </section>
+        </main>
+
+        <!-- Modal de Detalhes com Mapa -->
+        <div id="modal-detalhes" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2 id="modal-titulo"></h2>
+                <p id="modal-descricao"></p>
+                <!-- Mapa -->
+                <iframe
+                    id="modal-mapa"
+                    width="100%"
+                    height="300"
+                    style="border:0"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+
+
+    <!-- Rodapé -->
+    <footer>
+        <p>© 2024 HermeSport. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="Mostrardetalhes.js"></script>
+
+</body>
+</html>
